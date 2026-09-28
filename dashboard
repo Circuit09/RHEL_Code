@@ -1,0 +1,29 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["username"])) {
+    header("Location: index.php");
+    exit;
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Administrator Dashboard</title>
+</head>
+
+<body>
+
+<h1>Administrator Dashboard</h1>
+
+<p>Welcome, <?php echo htmlspecialchars($_SESSION["username"]); ?>.</p>
+
+<h2>Congratulations!</h2>
+
+<p>You successfully bypassed the authentication mechanism.</p>
+
+<p><strong>FLAG{SQL_VAULT_BYPASSED}</strong></p>
+
+</body>
+</html>
